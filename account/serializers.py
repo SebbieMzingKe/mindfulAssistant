@@ -1,4 +1,4 @@
-from .models import User
+from .models import User, Conversation, Message, SentimentAnalysisResult, WellbeingPlan, ProgressTracker, Resource, CommunityPost
 from rest_framework import serializers
 from rest_framework.validators import ValidationError
 
@@ -25,3 +25,39 @@ class UserSerializer(serializers.ModelSerializer):
             user.save()
             return user
 
+
+
+class ConversationSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Conversation
+        fields = '__all__'
+
+class MessageSerializer(serializers.ModelSerializers):
+    class Meta:
+        model = Message
+        fields = '__all__'
+
+class SentimentAnalysisResultSerializer(serializers.ModelSerializer):
+    class meta:
+        model = SentimentAnalysisResult
+        fields = '__all__'
+
+class WellbeingPlanSerializer(serializers.ModelSerializer):
+     class Meta:
+        model = WellbeingPlan
+        fields = '__all__'
+
+class ProgressTrackerSerializer(serializers.ModelSerializer):
+     class Meta:
+        model = ProgressTracker
+        fields = '__all__'
+
+class ResourceSerializer(serializers.ModelSerializer):
+     class Meta:
+        model = Resource
+        fields = '__all__'
+
+class CommunityPostSerializer(serializers.ModelSerializer):
+     class Meta:
+        model = CommunityPost
+        fields = '__all__'

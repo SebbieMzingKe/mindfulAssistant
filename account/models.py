@@ -47,7 +47,7 @@ class ProgressTracker():
     def __str__(self):
              return self.user
 
-class Resource(n=models.Model):
+class Resource(models.Model):
     Wellbeing_plan = models.ForeignKey(WellbeingPlan, on_delete = models.CASCADE)
     title = models.CharField(max_length = 100)
     link = models.URLField()
